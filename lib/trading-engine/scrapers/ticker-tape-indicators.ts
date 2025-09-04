@@ -154,6 +154,7 @@ const main = async (page?: Page, browser?: Browser) => {
     await delay(MINUTE_LONG_DELAY)
     // await delay(MINUTE_LONG_DELAY)
     // await delay(MINUTE_LONG_DELAY)
+    await navigateAndScrapeTickerTape(page, browser);
     startCron('0 8 * * *', () => navigateAndScrapeTickerTape(page, browser));
     // await navigateAndScrapeTickerTape(page, browser);
     // await withLogging('navigateAndScrapeTickerTape', navigateAndScrapeTickerTape)(page, browser);
