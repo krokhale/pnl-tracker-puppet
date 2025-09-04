@@ -1,0 +1,25 @@
+{
+  "name": "puppet",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc && tsc-alias",
+    "start": "node dist/src/index.js"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.19.0",
+    "dayjs": "^1.11.18",
+    "hono": "^4.9.6",
+    "node-cron": "^4.2.1",
+    "puppeteer": "^24.18.0",
+    "puppeteer-cluster": "^0.24.0",
+    "puppeteer-core": "^24.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "tsc-alias": "^1.8.16",
+    "tsx": "^4.7.1",
+    "typescript": "^5.8.3"
+  },
+  "packageManager": "pnpm@10.12.4+sha512.5ea8b0deed94ed68691c9bad4c955492705c5eeb8a87ef86bc62c74a26b037b08ff9570f108b2e4dbd1dd1a9186fea925e527f141c648e85af45631074680184"
+}
