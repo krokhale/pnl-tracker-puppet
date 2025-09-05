@@ -125,7 +125,7 @@ export const tickerTapeScrapeTable = async (page, storeItems) => {
     // await page.goto('https://www.google.com', {waitUntil: 'networkidle2', timeout: 60000});
 };
 
-
+let functionsExposed = false;
 const navigateAndScrapeTickerTape = async (page, browser) => {
     // const contextState = context.getState()
     await page.goto('https://www.tickertape.in/screener/equity/user/Y44D9H6TbpcYjpGh', {waitUntil: 'networkidle2'});
@@ -134,8 +134,12 @@ const navigateAndScrapeTickerTape = async (page, browser) => {
     // await delay(MINUTE_LONG_DELAY)
     // await delay(MINUTE_LONG_DELAY)
     // await page.exposeFunction("createItems", createItems);
-    await page.exposeFunction("storeItems", storeItems);
-    await page.exposeFunction("tickerTapeScrapeTable", tickerTapeScrapeTable);
+
+    if (!functionsExposed){
+        await page.exposeFunction("storeItems", storeItems);
+        await page.exposeFunction("tickerTapeScrapeTable", tickerTapeScrapeTable);
+        functionsExposed = true;
+    }
     // if (!contextState?.functionsExposed) {
     //     await page.exposeFunction("createItems", createItems);
     //     await page.exposeFunction("tickerTapeScrapeTable", tickerTapeScrapeTable);
